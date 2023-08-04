@@ -10,14 +10,14 @@ const Stopwatch = () => {
     <div className="app">
       <h3>React Stopwatch</h3>
       <div className='stopwatch-card'>
-        <p data-testid="time">{formatTime(timer)}</p> 
+        <p data test-id="time">{formatTime(timer)}</p> 
         <div className='buttons'>
         {
             !isActive && !isPaused ?
               <button onClick={handleStart} data-testid="start">Start</button>
               : (
-                isPaused ? <button onClick={handlePause}
-                
+                isPaused ? <button onClick={handlePause} data-testid="pause">Pause</button> :
+                <button onClick={handleResume}>Resume</button>   
               )
               
             

@@ -61,8 +61,15 @@ function Stopwatch() {
             !isActive && !isPaused ?
               <button onClick={handleStart} data-testid="start">Start</button>
               : (
-                isPaused ? <button onClick={handlePause} data-testid="pause">Pause</button> :
-                  <button onClick={handleResume}>Resume</button>
+                //isPaused ? <button onClick={handlePause} data-testid="pause">Pause</button> :
+                 // <button onClick={handleResume}>Resume</button>
+                 
+
+                if (isPaused) {
+                 <button onClick={handlePause} data-testid="pause">Pause</button>;
+                } else {
+                 <button onClick={handleResume}>Resume</button>;
+                }
               )
           }
           <button onClick={handleReset} disabled={disabled} data-testid="reset">Reset</button>

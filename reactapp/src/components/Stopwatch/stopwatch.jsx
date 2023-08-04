@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Stopwatch from "../components/Stopwatch/Stopwatch";
 import useTimer from '../../hook/useTimer';
 import { formatTime } from '../../utils';
 

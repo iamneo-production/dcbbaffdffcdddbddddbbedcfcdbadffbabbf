@@ -45,7 +45,7 @@ function Stopwatch() {
       pauseTimer();
     } else if (button1State === "Resume") {
       setButton1State("Pause");
-      setButton2State("");
+      setButton2State("Reset");
       startTimer();
     }
   };

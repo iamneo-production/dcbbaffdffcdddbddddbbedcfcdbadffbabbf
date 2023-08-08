@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import './Stopwatch.css';
 const Stopwatch = () => {
   // state to track the elapsed time
   const [disable, setDisable] = useState(true);
@@ -44,6 +43,7 @@ const Stopwatch = () => {
   const handleReset = () => {
     setTime(0);
     removeVisible();
+    setDisable(true);
     setIsRunning(false);
   };
 
@@ -58,30 +58,30 @@ const Stopwatch = () => {
 
   return (
     <div className = "watch_container">
-      <h1>React Stopwatch</h1>
+      <h1 className="head">React Stopwatch</h1>
       {/* display the elapsed time */}
       <p data-testid="time" className="timefont">{formattedTime()}</p>
       <div className = "button_con">
       {/* start button */}
         {visible &&(
-            <button data-testid="start" onClick={handleStart}>
+            <button data-testid="start" className="btn" onClick={handleStart}>
               Start
             </button>
         )}
         {/* pause button */}
       {isRunning && (
-        <button data-testid="pause" onClick={handlePause}>
+        <button data-testid="pause" className="btn" onClick={handlePause}>
           Pause
         </button>
       )}
       {/* resume button */}
       {!isRunning && time !== 0 && (
-        <button data-testid="resume" onClick={handleResume}>
+        <button data-testid="resume" className="btn" onClick={handleResume}>
           Resume
         </button>
       )}
       { (
-        <button data-testid="reset" onClick={handleReset} disabled={disable}>
+        <button data-testid="reset" className="btn_res" onClick={handleReset} disabled={disable}>
             Reset
         </button>
       )}
